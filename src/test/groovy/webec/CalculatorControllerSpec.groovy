@@ -5,14 +5,10 @@ import spock.lang.Specification
 
 class CalculatorControllerSpec extends Specification implements ControllerUnitTest<CalculatorController> {
 
-    def setup() {
-    }
-
-    def cleanup() {
-    }
-
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "test calc"() {
+        when: "calc is invoked with 5 and 6"
+        controller.calc(5, 6)
+        then: "5.5 is returned"
+        model.result == 5.5
     }
 }

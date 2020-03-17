@@ -6,12 +6,16 @@ class DecorationTagLib {
     static namespace = "webec"
 
     def decorate = { attibutes, body ->
-        int grade = Float.parseFloat(attibutes.grade)
         String decor = ''
-        if (grade >= 4) {
-            decor = ' :-)'
-        } else {
-            decor = ' :-('
+        try {
+            int grade = Float.parseFloat(attibutes.grade)
+            if (grade >= 4) {
+                decor = ' :-)'
+            } else {
+                decor = ' :-('
+            }
+        } catch (NumberFormatException e) {
+            // Ignore!
         }
         out << body()
         out << decor

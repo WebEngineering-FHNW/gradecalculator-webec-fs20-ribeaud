@@ -2,6 +2,5 @@
     <label for="${name}">
         ${label}
     </label>
-    <input class="form-control" type="number" id="${name}"
-           min="1" max="6" name="${name}" required>
+    <input class="form-control" type="number" id="${name}" name="${name}">
 </div>

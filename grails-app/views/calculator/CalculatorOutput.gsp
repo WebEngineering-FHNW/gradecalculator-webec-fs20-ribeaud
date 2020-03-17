@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta name="layout" content="form">
     <title>Grade Calculator</title>
     <link rel="stylesheet" href="/assets/bootstrap.css">
     <style>

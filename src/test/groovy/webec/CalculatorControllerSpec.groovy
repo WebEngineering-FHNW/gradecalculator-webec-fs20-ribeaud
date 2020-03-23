@@ -20,4 +20,12 @@ class CalculatorControllerSpec extends Specification implements ControllerUnitTe
         then: "5.5 is returned"
         model.calculatorModel.result == "5.5"
     }
+
+    void "test cals with invalid input"() {
+        when: "calc is invoked with -20 and 3"
+        def calculatorModel = new CalculatorModel(en: -20, msp: 3)
+        controller.calc(calculatorModel)
+        then: "An error message should be returned"
+        model.calculatorModel.result == "Can NOT calculate. En was invalid."
+    }
 }
